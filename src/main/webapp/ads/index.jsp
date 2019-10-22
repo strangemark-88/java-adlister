@@ -13,6 +13,9 @@
     <title>ads list</title>
 </head>
 <body>
+
+<h1>Here are all the Ads</h1>
+<br>
     <c:forEach var="ad" items="${ads}">
         <h3>${ad.title}</h3>
         <p>${ad.description}</p>
