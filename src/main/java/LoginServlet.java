@@ -5,7 +5,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
-@WebServlet("/login")
+@WebServlet(name = "LoginServlet", urlPatterns = "/login")
 public class LoginServlet extends HttpServlet {
 
     @Override
@@ -19,9 +19,12 @@ public class LoginServlet extends HttpServlet {
         if (request.getParameter("username").equalsIgnoreCase("admin") && request.getParameter("password").equals("password")) {
 
             response.sendRedirect("/profile");
-        }else{
-            response.sendRedirect("/login");
+            return;
         }
+//        else{
+//            response.sendRedirect("/login");
+//        }
+        response.sendRedirect("/login?error=true");
     }
 
 }
