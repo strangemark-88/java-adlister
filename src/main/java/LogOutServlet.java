@@ -10,7 +10,15 @@ public class LogOutServlet extends HttpServlet {
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
-        request.getSession().removeAttribute("user");
+//        request.getSession().removeAttribute("user");
+        request.getSession().invalidate();
+        response.sendRedirect("/login");
+
+    }
+
+    protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+
+
         request.getSession().invalidate();
         response.sendRedirect("/login");
 
